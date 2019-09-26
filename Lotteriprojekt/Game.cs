@@ -66,23 +66,8 @@ namespace Lotteriprojekt
                 Console.WriteLine("|_______________|        |_________________|");
                 guess = Convert.ToInt32(Console.ReadLine());
 
-
-                if (pCash <= 0)
-                {
-                    Console.WriteLine("SUFFICIENT FUNDS, YOU LOST... \n GAME OVER! \n \n GETTING KICKED OUT OF THE GAME...PRESS A KEY TO ACCEPT YOUR FATE");
-                    Console.ReadKey();
-                    gameOver = true;
-
-                }
-                else if (cpuCash <= 0)
-                {
-                    Console.WriteLine("WINNER WINNER CHICKEN DINNER!");
-                    Console.WriteLine("Your total balance after winning against the CPU {0}", pCash);
-                    gameOver = true;
-                }
-                
                 //Spelare och CPU vinner
-                else if (guess == randomNr && randomGuess == randomNr)
+                if (guess == randomNr && randomGuess == randomNr)
                 {
                     if (randomNr == 1)
                     {
@@ -139,36 +124,284 @@ namespace Lotteriprojekt
                     Console.WriteLine("CPU WON! ");
                     Console.WriteLine("CPU current balance is: {0}", cpuCash);
                     Console.WriteLine(".................................................................................");
+
+                    if (pCash < 1)
+                    {
+                        Console.WriteLine("SUFFICIENT FUNDS, YOU LOST... \n GAME OVER! \n \n GETTING KICKED OUT OF THE GAME...PRESS A KEY TO ACCEPT YOUR FATE");
+                        Console.ReadKey();
+                        gameOver = true;
+
+                    }
+                    if (cpuCash < 1)
+                    {
+                        Console.WriteLine("WINNER WINNER CHICKEN DINNER!");
+                        Console.WriteLine("Your total balance after winning against the CPU {0}", pCash);
+                        gameOver = true;
+                    }
+                    if (pCash < 1 && cpuCash < 1)
+                    {
+                        Console.WriteLine("BOTH LOST!!!");
+                        Console.WriteLine("BOTH KICKED OUT OF THE GAME! Player ended up on: {0} CPU ended up on: {1}", pCash, cpuCash);
+                        gameOver = true;
+                    }
+
                 }
-                
-                
+
+
                 //Spelare och CPU förlorar
                 else if (guess != randomNr && randomGuess != randomNr)
                 {
+                    if (randomNr == 1)
+                    {
+                        Console.ForegroundColor
+                         = ConsoleColor.Red;
+
+                        Console.WriteLine("--------------------RESULTS-----------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------------------------------");
+                        Console.WriteLine("-----oooooo--------oooooooo---oooo----------");
+                        Console.WriteLine("-----oooooooo------oooooooo---oooooo--------");
+                        Console.WriteLine("-----ooo---ooo-----ooo--------ooo-ooo-------");
+                        Console.WriteLine("-----oooooooo------ooooooo----ooo---ooo-----");
+                        Console.WriteLine("-----ooo---ooo-----ooo--------ooo--ooo------");
+                        Console.WriteLine("-----ooo----ooo----oooooooo---ooo-ooo-------");
+                        Console.WriteLine("-----ooo-----ooo---oooooooo---oooo----------");
+                        Console.WriteLine("--------------------------------------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------RESULTS-----------------");
+                        Console.ResetColor();
+
+
+                    }
+                    else if (randomNr == 2)
+                    {
+
+                        Console.ForegroundColor
+                           = ConsoleColor.DarkGray;
+
+                        Console.WriteLine("--------------------------------RESULTS-----------------------------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+                        Console.WriteLine("-----oooooooo-----ooo-----------oooooo----------ooooooo---ooo-----ooo-----");
+                        Console.WriteLine("-----ooooooooo----ooo----------oooooooo-------ooooooooo---ooo----ooo------");
+                        Console.WriteLine("-----ooo---ooo----ooo---------ooo----ooo-----ooo----------ooo--ooo--------");
+                        Console.WriteLine("-----oooooooo-----ooo---------ooo----ooo----ooo-----------oooooo----------");
+                        Console.WriteLine("-----ooo---ooo----ooo--------oooooooooooo---ooo-----------ooooo-----------");
+                        Console.WriteLine("-----ooooooooo----oooooooo---ooo------ooo---ooooooooooo---ooo--ooo--------");
+                        Console.WriteLine("-----ooooooo------oooooooo---ooo------ooo-----ooooooooo---ooo----ooo------");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------------------RESULTS-----------------------------------");
+                        Console.ResetColor();
+
+
+                    }
+                    Console.WriteLine(".................................................................................");
                     Console.WriteLine("YOU LOST!");
-                    Console.WriteLine("CPU LOST");
+                    pCash = pCash - (bet * 2);
+                    cpuCash = cpuCash - (bet * 2);
+                    Console.WriteLine("Your current balance is: {0}", pCash);
+                    Console.WriteLine(".................................................................................");
+                    Console.WriteLine("CPU LOST! ");
+                    Console.WriteLine("CPU current balance is: {0}", cpuCash);
+                    Console.WriteLine(".................................................................................");
+
+
+                    if (pCash < 1)
+                    {
+                        Console.WriteLine("SUFFICIENT FUNDS, YOU LOST... \n GAME OVER! \n \n GETTING KICKED OUT OF THE GAME...PRESS A KEY TO ACCEPT YOUR FATE");
+                        Console.ReadKey();
+                        gameOver = true;
+
+                    }
+                    if (cpuCash < 1)
+                    {
+                        Console.WriteLine("WINNER WINNER CHICKEN DINNER!");
+                        Console.WriteLine("Your total balance after winning against the CPU {0}", pCash);
+                        gameOver = true;
+                    }
+                    if (pCash < 1 && cpuCash < 1)
+                    {
+                        Console.WriteLine("BOTH LOST!!!");
+                        Console.WriteLine("BOTH KICKED OUT OF THE GAME! Player ended up on: {0} CPU ended up on: {1}", pCash, cpuCash);
+                        gameOver = true;
+                    }
+
+
 
                 }
-                
-                
+
+
                 //Spelare förlorar och CPU vinner
                 else if (guess != randomNr && randomGuess == randomNr)
                 {
+                    if (randomNr == 1)
+                    {
+                        Console.ForegroundColor
+                         = ConsoleColor.Red;
+
+                        Console.WriteLine("--------------------RESULTS-----------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------------------------------");
+                        Console.WriteLine("-----oooooo--------oooooooo---oooo----------");
+                        Console.WriteLine("-----oooooooo------oooooooo---oooooo--------");
+                        Console.WriteLine("-----ooo---ooo-----ooo--------ooo-ooo-------");
+                        Console.WriteLine("-----oooooooo------ooooooo----ooo---ooo-----");
+                        Console.WriteLine("-----ooo---ooo-----ooo--------ooo--ooo------");
+                        Console.WriteLine("-----ooo----ooo----oooooooo---ooo-ooo-------");
+                        Console.WriteLine("-----ooo-----ooo---oooooooo---oooo----------");
+                        Console.WriteLine("--------------------------------------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------RESULTS-----------------");
+                        Console.ResetColor();
+
+
+                    }
+                    else if (randomNr == 2)
+                    {
+
+                        Console.ForegroundColor
+                           = ConsoleColor.DarkGray;
+
+                        Console.WriteLine("--------------------------------RESULTS-----------------------------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+                        Console.WriteLine("-----oooooooo-----ooo-----------oooooo----------ooooooo---ooo-----ooo-----");
+                        Console.WriteLine("-----ooooooooo----ooo----------oooooooo-------ooooooooo---ooo----ooo------");
+                        Console.WriteLine("-----ooo---ooo----ooo---------ooo----ooo-----ooo----------ooo--ooo--------");
+                        Console.WriteLine("-----oooooooo-----ooo---------ooo----ooo----ooo-----------oooooo----------");
+                        Console.WriteLine("-----ooo---ooo----ooo--------oooooooooooo---ooo-----------ooooo-----------");
+                        Console.WriteLine("-----ooooooooo----oooooooo---ooo------ooo---ooooooooooo---ooo--ooo--------");
+                        Console.WriteLine("-----ooooooo------oooooooo---ooo------ooo-----ooooooooo---ooo----ooo------");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------------------RESULTS-----------------------------------");
+                        Console.ResetColor();
+
+
+                    }
+                    Console.WriteLine(".................................................................................");
                     Console.WriteLine("YOU LOST!");
-                    Console.WriteLine("CPU WON!");
+                    pCash = pCash - (bet * 2);
+                    cpuCash = cpuCash + (bet * 2);
+                    Console.WriteLine("Your current balance is: {0}", pCash);
+                    Console.WriteLine(".................................................................................");
+                    Console.WriteLine("CPU WON! ");
+                    Console.WriteLine("CPU current balance is: {0}", cpuCash);
+                    Console.WriteLine(".................................................................................");
+
+
+                    if (pCash < 1)
+                    {
+                        Console.WriteLine("SUFFICIENT FUNDS, YOU LOST... \n GAME OVER! \n \n GETTING KICKED OUT OF THE GAME...PRESS A KEY TO ACCEPT YOUR FATE");
+                        Console.ReadKey();
+                        gameOver = true;
+
+                    }
+                    if (cpuCash < 1)
+                    {
+                        Console.WriteLine("WINNER WINNER CHICKEN DINNER!");
+                        Console.WriteLine("Your total balance after winning against the CPU {0}", pCash);
+                        gameOver = true;
+                    }
+                    if (pCash < 1 && cpuCash < 1)
+                    {
+                        Console.WriteLine("BOTH LOST!!!");
+                        Console.WriteLine("BOTH KICKED OUT OF THE GAME! Player ended up on: {0} CPU ended up on: {1}", pCash, cpuCash);
+                        gameOver = true;
+                    }
+
+
 
                 }
 
                 //Spelare vinner och CPU förlorar
                 else if (guess == randomNr && randomGuess != randomNr)
                 {
+                    if (randomNr == 1)
+                    {
+                        Console.ForegroundColor
+                         = ConsoleColor.Red;
+
+                        Console.WriteLine("--------------------RESULTS-----------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------------------------------");
+                        Console.WriteLine("-----oooooo--------oooooooo---oooo----------");
+                        Console.WriteLine("-----oooooooo------oooooooo---oooooo--------");
+                        Console.WriteLine("-----ooo---ooo-----ooo--------ooo-ooo-------");
+                        Console.WriteLine("-----oooooooo------ooooooo----ooo---ooo-----");
+                        Console.WriteLine("-----ooo---ooo-----ooo--------ooo--ooo------");
+                        Console.WriteLine("-----ooo----ooo----oooooooo---ooo-ooo-------");
+                        Console.WriteLine("-----ooo-----ooo---oooooooo---oooo----------");
+                        Console.WriteLine("--------------------------------------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------RESULTS-----------------");
+                        Console.ResetColor();
+
+
+                    }
+                    else if (randomNr == 2)
+                    {
+
+                        Console.ForegroundColor
+                           = ConsoleColor.DarkGray;
+
+                        Console.WriteLine("--------------------------------RESULTS-----------------------------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+                        Console.WriteLine("-----oooooooo-----ooo-----------oooooo----------ooooooo---ooo-----ooo-----");
+                        Console.WriteLine("-----ooooooooo----ooo----------oooooooo-------ooooooooo---ooo----ooo------");
+                        Console.WriteLine("-----ooo---ooo----ooo---------ooo----ooo-----ooo----------ooo--ooo--------");
+                        Console.WriteLine("-----oooooooo-----ooo---------ooo----ooo----ooo-----------oooooo----------");
+                        Console.WriteLine("-----ooo---ooo----ooo--------oooooooooooo---ooo-----------ooooo-----------");
+                        Console.WriteLine("-----ooooooooo----oooooooo---ooo------ooo---ooooooooooo---ooo--ooo--------");
+                        Console.WriteLine("-----ooooooo------oooooooo---ooo------ooo-----ooooooooo---ooo----ooo------");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+                        Console.WriteLine("--------------------------------------------------------------------------");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("--------------------------------RESULTS-----------------------------------");
+                        Console.ResetColor();
+
+
+                    }
+                    Console.WriteLine(".................................................................................");
                     Console.WriteLine("YOU WIN!");
-                    Console.WriteLine("CPU LOST!");
+                    pCash = pCash + (bet * 2);
+                    cpuCash = cpuCash - (bet * 2);
+                    Console.WriteLine("Your current balance is: {0}", pCash);
+                    Console.WriteLine(".................................................................................");
+                    Console.WriteLine("CPU LOST! ");
+                    Console.WriteLine("CPU current balance is: {0}", cpuCash);
+                    Console.WriteLine(".................................................................................");
+
+
+                    if (pCash < 1)
+                    {
+                        Console.WriteLine("SUFFICIENT FUNDS, YOU LOST... \n GAME OVER! \n \n GETTING KICKED OUT OF THE GAME...PRESS A KEY TO ACCEPT YOUR FATE");
+                        Console.ReadKey();
+                        gameOver = true;
+
+                    }
+                    if (cpuCash < 1)
+                    {
+                        Console.WriteLine("WINNER WINNER CHICKEN DINNER!");
+                        Console.WriteLine("Your total balance after winning against the CPU {0}", pCash);
+                        gameOver = true;
+                    }
+                    if (pCash < 1 && cpuCash < 1)
+                    {
+                        Console.WriteLine("BOTH LOST!!!");
+                        Console.WriteLine("BOTH KICKED OUT OF THE GAME! Player ended up on: {0} CPU ended up on: {1}", pCash, cpuCash);
+                        gameOver = true;
+                    }
+
 
                 }
 
 
-                else if (guess >= 2)
+                else if (guess > 2)
                 {
                     Console.WriteLine("Incorrect input, please try again!");
                     return;
