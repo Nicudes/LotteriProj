@@ -28,13 +28,22 @@ namespace Lotteriprojekt
             pCash = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Total cash deposited: {0}", pCash);
 
+            while (pCash <= 0)
+            {
+                Console.WriteLine("Please deposit more than 0!");
+                Console.WriteLine("Hello {0} how much would you like to deposit into the game?", name);
+                pCash = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Total cash deposited: {0}", pCash);
+
+            }
+
 
             cpuCash = pCash;
 
             while (gameOver == false)
             {
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                Console.WriteLine("New game initiaded!");
+                Console.WriteLine("New game initiated!");
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                 Console.WriteLine("How much do you want to bet?");
 
@@ -43,15 +52,28 @@ namespace Lotteriprojekt
                 //Variabler för random
                 Random random = new Random();
                 int randomNr = random.Next(1, 3);
-                int randomGuess = random.Next(1, 3);
+                int cpuGuess = random.Next(1, 3);
 
                 while (bet > pCash)
                     {
                         Console.WriteLine("Bet is higher than your balance, please try again");
                     Console.WriteLine("How much do you want to bet?");
                     bet = Convert.ToInt32(Console.ReadLine());
+                  
+                }
+                while (bet <= 0)
+                {
+                    Console.WriteLine("Bet must be higher than 0!");
+                    Console.WriteLine("How much do you want to bet?");
+                    bet = Convert.ToInt32(Console.ReadLine());
+                }
+                while (bet > cpuCash)
+                {
+                    Console.WriteLine("Computer cash is lower than the bet value. Please enter a at or bellow: " + cpuCash);
+
 
                 }
+
 
 
                 Console.WriteLine("Your bet is: " + bet + " Your total balance: " + (pCash - bet) );
@@ -60,14 +82,14 @@ namespace Lotteriprojekt
                 Console.WriteLine("The CPU bet is: " + bet + " CPU total balance: " + (cpuCash - bet) );
                 cpuCash = cpuCash - bet;
                 Console.WriteLine("..................................................................");
-                Console.WriteLine("Fick RED or BLACK ");
+                Console.WriteLine("Pick RED or BLACK ");
                 Console.WriteLine("_________________        ___________________");
                 Console.WriteLine("|PRESS 1 for RED|        |PRESS 2 for BLACK|");
                 Console.WriteLine("|_______________|        |_________________|");
                 guess = Convert.ToInt32(Console.ReadLine());
 
                 //Spelare och CPU vinner
-                if (guess == randomNr && randomGuess == randomNr)
+                if (guess == randomNr && cpuGuess == randomNr)
                 {
                     if (randomNr == 1)
                     {
@@ -117,7 +139,7 @@ namespace Lotteriprojekt
                     }
                     Console.WriteLine(".................................................................................");
                     Console.WriteLine("YOU WIN!");
-                    pCash = pCash + (bet * 2);
+                    pCash = pCash + (bet *2);
                     cpuCash = cpuCash + (bet * 2);
                     Console.WriteLine("Your current balance is: {0}", pCash );
                     Console.WriteLine(".................................................................................");
@@ -149,7 +171,7 @@ namespace Lotteriprojekt
 
 
                 //Spelare och CPU förlorar
-                else if (guess != randomNr && randomGuess != randomNr)
+                else if (guess != randomNr && cpuGuess != randomNr)
                 {
                     if (randomNr == 1)
                     {
@@ -199,8 +221,6 @@ namespace Lotteriprojekt
                     }
                     Console.WriteLine(".................................................................................");
                     Console.WriteLine("YOU LOST!");
-                    pCash = pCash - (bet * 2);
-                    cpuCash = cpuCash - (bet * 2);
                     Console.WriteLine("Your current balance is: {0}", pCash);
                     Console.WriteLine(".................................................................................");
                     Console.WriteLine("CPU LOST! ");
@@ -234,7 +254,7 @@ namespace Lotteriprojekt
 
 
                 //Spelare förlorar och CPU vinner
-                else if (guess != randomNr && randomGuess == randomNr)
+                else if (guess != randomNr && cpuGuess == randomNr)
                 {
                     if (randomNr == 1)
                     {
@@ -284,7 +304,6 @@ namespace Lotteriprojekt
                     }
                     Console.WriteLine(".................................................................................");
                     Console.WriteLine("YOU LOST!");
-                    pCash = pCash - (bet * 2);
                     cpuCash = cpuCash + (bet * 2);
                     Console.WriteLine("Your current balance is: {0}", pCash);
                     Console.WriteLine(".................................................................................");
@@ -318,7 +337,7 @@ namespace Lotteriprojekt
                 }
 
                 //Spelare vinner och CPU förlorar
-                else if (guess == randomNr && randomGuess != randomNr)
+                else if (guess == randomNr && cpuGuess != randomNr)
                 {
                     if (randomNr == 1)
                     {
@@ -369,7 +388,7 @@ namespace Lotteriprojekt
                     Console.WriteLine(".................................................................................");
                     Console.WriteLine("YOU WIN!");
                     pCash = pCash + (bet * 2);
-                    cpuCash = cpuCash - (bet * 2);
+  
                     Console.WriteLine("Your current balance is: {0}", pCash);
                     Console.WriteLine(".................................................................................");
                     Console.WriteLine("CPU LOST! ");
