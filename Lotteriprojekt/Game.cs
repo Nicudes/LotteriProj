@@ -147,20 +147,20 @@ namespace Lotteriprojekt
                     Console.WriteLine("CPU current balance is: {0}", cpuCash);
                     Console.WriteLine(".................................................................................");
 
-                    if (pCash < 1)
+                    if (pCash <= 0)
                     {
                         Console.WriteLine("SUFFICIENT FUNDS, YOU LOST... \n GAME OVER! \n \n GETTING KICKED OUT OF THE GAME...PRESS A KEY TO ACCEPT YOUR FATE");
                         Console.ReadKey();
                         gameOver = true;
 
                     }
-                    if (cpuCash < 1)
+                    if (cpuCash <= 0)
                     {
                         Console.WriteLine("WINNER WINNER CHICKEN DINNER!");
                         Console.WriteLine("Your total balance after winning against the CPU {0}", pCash);
                         gameOver = true;
                     }
-                    if (pCash < 1 && cpuCash < 1)
+                    if (pCash <= 0 && cpuCash <= 0)
                     {
                         Console.WriteLine("BOTH LOST!!!");
                         Console.WriteLine("BOTH KICKED OUT OF THE GAME! Player ended up on: {0} CPU ended up on: {1}", pCash, cpuCash);
@@ -228,20 +228,20 @@ namespace Lotteriprojekt
                     Console.WriteLine(".................................................................................");
 
 
-                    if (pCash < 1)
+                    if (pCash <= 0)
                     {
                         Console.WriteLine("SUFFICIENT FUNDS, YOU LOST... \n GAME OVER! \n \n GETTING KICKED OUT OF THE GAME...PRESS A KEY TO ACCEPT YOUR FATE");
                         Console.ReadKey();
                         gameOver = true;
 
                     }
-                    if (cpuCash < 1)
+                    if (cpuCash <= 0)
                     {
                         Console.WriteLine("WINNER WINNER CHICKEN DINNER!");
                         Console.WriteLine("Your total balance after winning against the CPU {0}", pCash);
                         gameOver = true;
                     }
-                    if (pCash < 1 && cpuCash < 1)
+                    if (pCash <=0 && cpuCash <= 0)
                     {
                         Console.WriteLine("BOTH LOST!!!");
                         Console.WriteLine("BOTH KICKED OUT OF THE GAME! Player ended up on: {0} CPU ended up on: {1}", pCash, cpuCash);
@@ -312,20 +312,20 @@ namespace Lotteriprojekt
                     Console.WriteLine(".................................................................................");
 
 
-                    if (pCash < 1)
+                    if (pCash <= 0)
                     {
                         Console.WriteLine("SUFFICIENT FUNDS, YOU LOST... \n GAME OVER! \n \n GETTING KICKED OUT OF THE GAME...PRESS A KEY TO ACCEPT YOUR FATE");
                         Console.ReadKey();
                         gameOver = true;
 
                     }
-                    if (cpuCash < 1)
+                    if (cpuCash <= 0)
                     {
                         Console.WriteLine("WINNER WINNER CHICKEN DINNER!");
                         Console.WriteLine("Your total balance after winning against the CPU {0}", pCash);
                         gameOver = true;
                     }
-                    if (pCash < 1 && cpuCash < 1)
+                    if (pCash <= 0 && cpuCash <= 0)
                     {
                         Console.WriteLine("BOTH LOST!!!");
                         Console.WriteLine("BOTH KICKED OUT OF THE GAME! Player ended up on: {0} CPU ended up on: {1}", pCash, cpuCash);
@@ -396,20 +396,20 @@ namespace Lotteriprojekt
                     Console.WriteLine(".................................................................................");
 
 
-                    if (pCash < 1)
+                    if (pCash <= 0)
                     {
                         Console.WriteLine("SUFFICIENT FUNDS, YOU LOST... \n GAME OVER! \n \n GETTING KICKED OUT OF THE GAME...PRESS A KEY TO ACCEPT YOUR FATE");
                         Console.ReadKey();
                         gameOver = true;
 
                     }
-                    if (cpuCash < 1)
+                    if (cpuCash <= 0)
                     {
                         Console.WriteLine("WINNER WINNER CHICKEN DINNER!");
                         Console.WriteLine("Your total balance after winning against the CPU {0}", pCash);
                         gameOver = true;
                     }
-                    if (pCash < 1 && cpuCash < 1)
+                    if (pCash <= 0 && cpuCash <= 0)
                     {
                         Console.WriteLine("BOTH LOST!!!");
                         Console.WriteLine("BOTH KICKED OUT OF THE GAME! Player ended up on: {0} CPU ended up on: {1}", pCash, cpuCash);
