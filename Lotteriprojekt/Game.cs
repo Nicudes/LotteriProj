@@ -34,7 +34,7 @@ namespace Lotteriprojekt
             while (gameOver == false)
             {
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                Console.WriteLine("New game initiaded!");
+                Console.WriteLine("New game initiated!");
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                 Console.WriteLine("How much do you want to bet?");
 
@@ -43,7 +43,7 @@ namespace Lotteriprojekt
                 //Variabler för random
                 Random random = new Random();
                 int randomNr = random.Next(1, 3);
-                int randomGuess = random.Next(1, 3);
+                int randomCpuGuess = random.Next(1, 3);
 
                 while (bet > pCash)
                     {
@@ -60,7 +60,7 @@ namespace Lotteriprojekt
                 Console.WriteLine("The CPU bet is: " + bet + " CPU total balance: " + (cpuCash - bet) );
                 cpuCash = cpuCash - bet;
                 Console.WriteLine("..................................................................");
-                Console.WriteLine("Fick RED or BLACK ");
+                Console.WriteLine("Pick RED or BLACK ");
                 Console.WriteLine("_________________        ___________________");
                 Console.WriteLine("|PRESS 1 for RED|        |PRESS 2 for BLACK|");
                 Console.WriteLine("|_______________|        |_________________|");
@@ -82,7 +82,7 @@ namespace Lotteriprojekt
                 }
                 
                 //Spelare och CPU vinner
-                else if (guess == randomNr && randomGuess == randomNr)
+                else if (guess == randomNr && randomCpuGuess == randomNr)
                 {
                     if (randomNr == 1)
                     {
@@ -143,16 +143,16 @@ namespace Lotteriprojekt
                 
                 
                 //Spelare och CPU förlorar
-                else if (guess != randomNr && randomGuess != randomNr)
+                else if (guess != randomNr && randomCpuGuess != randomNr)
                 {
-                    Console.WriteLine("YOU LOST!");
+                    Console.WriteLine("YOU LOST!");                
                     Console.WriteLine("CPU LOST");
 
                 }
                 
                 
                 //Spelare förlorar och CPU vinner
-                else if (guess != randomNr && randomGuess == randomNr)
+                else if (guess != randomNr && randomCpuGuess == randomNr)
                 {
                     Console.WriteLine("YOU LOST!");
                     Console.WriteLine("CPU WON!");
@@ -160,7 +160,7 @@ namespace Lotteriprojekt
                 }
 
                 //Spelare vinner och CPU förlorar
-                else if (guess == randomNr && randomGuess != randomNr)
+                else if (guess == randomNr && randomCpuGuess != randomNr)
                 {
                     Console.WriteLine("YOU WIN!");
                     Console.WriteLine("CPU LOST!");
