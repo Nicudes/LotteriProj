@@ -1,0 +1,7 @@
+C:\Users\Ha\Desktop\Newton dotnet 3\Lotteriprojekt\Lotteriprojekt\Lotteriprojekt\bin\Debug\Lotteriprojekt.exe.config
+C:\Users\Ha\Desktop\Newton dotnet 3\Lotteriprojekt\Lotteriprojekt\Lotteriprojekt\bin\Debug\Lotteriprojekt.exe
+C:\Users\Ha\Desktop\Newton dotnet 3\Lotteriprojekt\Lotteriprojekt\Lotteriprojekt\bin\Debug\Lotteriprojekt.pdb
+C:\Users\Ha\Desktop\Newton dotnet 3\Lotteriprojekt\Lotteriprojekt\Lotteriprojekt\obj\Debug\Lotteriprojekt.csprojAssemblyReference.cache
+C:\Users\Ha\Desktop\Newton dotnet 3\Lotteriprojekt\Lotteriprojekt\Lotteriprojekt\obj\Debug\Lotteriprojekt.csproj.CoreCompileInputs.cache
+C:\Users\Ha\Desktop\Newton dotnet 3\Lotteriprojekt\Lotteriprojekt\Lotteriprojekt\obj\Debug\Lotteriprojekt.exe
+C:\Users\Ha\Desktop\Newton dotnet 3\Lotteriprojekt\Lotteriprojekt\Lotteriprojekt\obj\Debug\Lotteriprojekt.pdb
